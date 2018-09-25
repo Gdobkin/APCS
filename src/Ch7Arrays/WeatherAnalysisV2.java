@@ -10,32 +10,42 @@ import java.util.Scanner;
     * Run a for loop for above average day
     */
     public class WeatherAnalysisV2 {
-        public static void main(String[] args) {
+        public static void main(String[] args) { //creates scanner and starts running the program
             Scanner input = new Scanner(System.in);
             run(input);
         }
-        public static void run(Scanner input){
-            double count = 0.0;
+        public static void run(Scanner input){ //asks for user input and calls other methods
             System.out.print("How many days' temperatures? ");
             int highest = input.nextInt();
             int[] nums = new int[highest];
-            for(int i = 0; i<highest;i++){ //creates the array
+            double count = populate(highest,input, nums);
+            double average = averageCalc(count,highest);
+            System.out.println("Average temp = " + average );
+            System.out.println(aboveAvgCalc(average,nums,highest) + " days were above average.");
+        }
+        public static double populate (int highest, Scanner input, int[] nums){ //creates the array
+            double count = 0.0;
+            for(int i = 0; i<highest;i++){
                 System.out.print("Day " + (i+1) + "'s high temp: " );
                 nums[i]=input.nextInt();
                 count+=nums[i];
             }
-            // find the average bc numbers are already in the array
+            return count;
+        }
+        public static double averageCalc(double count, int highest){ // find the average bc numbers are already in the array
             double average = count/highest;
             DecimalFormat df = new DecimalFormat("0.0"); //rounds the average to once decimal place
             average = Double.parseDouble(df.format(average));
-            System.out.println("Average temp = " + average );
+            return average;
+
+        }
+        public static int aboveAvgCalc(double average, int[] nums, int highest){ //checks for what is higher than the average
             int aboveAvg = 0;
-            for (int i = 0; i<highest ; i++){ //checks for what is higher than the average
+            for (int i = 0; i<highest ; i++){
                 if (nums[i]>average){
                     aboveAvg++;
                 }
             }
-            System.out.println(aboveAvg + " days were above average.");
+            return aboveAvg;
         }
-
     }
