@@ -8,7 +8,6 @@ public class ArrayPractice {
         for (int i = 0; i < random.length; i++) {
             random[i] = (int) (Math.random() * 10 + 1);
         }
-
         System.out.println(Arrays.toString(random));
     }
 }
