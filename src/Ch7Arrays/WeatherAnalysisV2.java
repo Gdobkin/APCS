@@ -1,7 +1,6 @@
 package Ch7Arrays;
 
 import java.text.DecimalFormat;
-import java.util.Arrays;
 import java.util.Scanner;
 
     /*
@@ -23,8 +22,6 @@ import java.util.Scanner;
             double average = averageCalc(count,highest);
             System.out.println("Average temp = " + average );
             System.out.println(aboveAvgCalc(average,nums,highest) + " days were above average.");
-            System.out.println(Arrays.toString(nums));
-          //  nums = Arrays.sort(nums);
         }
         public static double populate (int highest, Scanner input, int[] nums){ //creates the array
             double count = 0.0;
