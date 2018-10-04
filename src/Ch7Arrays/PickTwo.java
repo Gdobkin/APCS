@@ -15,14 +15,16 @@ public class PickTwo {
 
             while(!done) {
                 team1 = (int) (Math.random() * 8 + 1);
-                for(int i = 0; i<8; i++){
-                    if(used[i]==team1) {
-                        break;
-                    } else{
-                        done = true;
-                        break;
+                int check = 0;
+                for(int i = 0; i<8;i++) {
+                    if (!(team1 == used[i])) {
+                        check++;
                     }
                 }
+                if(check==8){
+                    done = true;
+                }
+
             }
 
             for (int i = 0; i < 8; i++) {
@@ -35,13 +37,14 @@ public class PickTwo {
             done = false;
             while(!done) {
                 team2 = (int) (Math.random() * 8 + 1);
-                for(int i = 0; i<8; i++){
-                    if(used[i]==team2) {
-                        break;
-                    } else{
-                        done = true;
-                        break;
+                int check = 0;
+                for(int i = 0; i<8;i++) {
+                    if (!(team2 == used[i])) {
+                        check++;
                     }
+                }
+                if(check==8){
+                    done = true;
                 }
             }
 
