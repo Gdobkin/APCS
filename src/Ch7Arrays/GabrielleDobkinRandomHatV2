@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class GabrielleDobkinRandomHatV2 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("How many teams are competing?");
+        int numTeams = scan.nextInt();
+        int[] teams = new int[numTeams];
+        for (int i = 1; i<=numTeams; i++){
+            teams[i-1] = i;
+        }
+        int[] used = new int[numTeams];
+        int unusedIndex = 0;
+        while(used[numTeams-1]==0) {
+            int team1= pick(numTeams, used, teams, unusedIndex);
+            int team2 = pick(numTeams, used, teams, unusedIndex);
+
+            System.out.println(team1 + " "+ team2);
+        }
+    }
+    public static int pick(int numTeams, int[] used, int[] teams, int unusedIndex){
+        boolean done = false;
+        int team = 0;
+        while(!done) {
+            team = (int) (Math.random() * numTeams + 1);
+            int check = 0;
+            for(int i = 0; i<numTeams;i++) {
+                if (!(team == used[i])) {
+                    check++;
+                }
+            }
+            if(check==numTeams){
+                done = true;
+            }
+        }
+        for (int i = 0; i < numTeams; i++) {
+            if (teams[i] == team) {
+                used[unusedIndex] = team;
+                unusedIndex++;
+            }
+        }
+        return team;
+    }
+}
