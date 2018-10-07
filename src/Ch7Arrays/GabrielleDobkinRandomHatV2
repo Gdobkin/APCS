@@ -1,39 +1,39 @@
 import java.util.Scanner;
-
+//this program asks for a number a teams participating in a tournament and matches up the first round with no repeats
 public class GabrielleDobkinRandomHatV2 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("How many teams are competing?");
-        int numTeams = scan.nextInt();
-        int[] teams = new int[numTeams];
+        int numTeams = scan.nextInt(); //gets number of teams competing
+        int[] teams = new int[numTeams]; //populates an array with all of the teams
         for (int i = 1; i<=numTeams; i++){
             teams[i-1] = i;
         }
-        int[] used = new int[numTeams];
+        int[] used = new int[numTeams]; //creates a blank array that will be used to store teams already picked
         int unusedIndex = 0;
-        while(used[numTeams-1]==0) {
+        while(used[numTeams-1]==0) { //find matches and prints matches. repeats based on number of teams
             int team1= pick(numTeams, used, teams, unusedIndex);
             int team2 = pick(numTeams, used, teams, unusedIndex);
 
             System.out.println(team1 + " "+ team2);
         }
     }
-    public static int pick(int numTeams, int[] used, int[] teams, int unusedIndex){
-        boolean done = false;
-        int team = 0;
-        while(!done) {
-            team = (int) (Math.random() * numTeams + 1);
-            int check = 0;
+    public static int pick(int numTeams, int[] used, int[] teams, int unusedIndex){//finds and returns matches
+        boolean done = false; //checks if an unused team has been found
+        int team = 0; //the team number that will be returned
+        while(!done) { //while loop is used because number of repeats is unknown
+            team = (int) (Math.random() * numTeams + 1); //picks random team
+            int check = 0; //checks if that team has been used
             for(int i = 0; i<numTeams;i++) {
                 if (!(team == used[i])) {
                     check++;
                 }
             }
-            if(check==numTeams){
+            if(check==numTeams){ //it it's unused it's all good, otherwise repeat
                 done = true;
             }
         }
-        for (int i = 0; i < numTeams; i++) {
+        for (int i = 0; i < numTeams; i++) { //once a team has been found it is marked that it shouldn't be reused
             if (teams[i] == team) {
                 used[unusedIndex] = team;
                 unusedIndex++;
