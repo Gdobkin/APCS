@@ -1,65 +1,54 @@
 package Ch7Arrays;
-
 import java.util.Scanner;
-
-// this program picks two numbers between 1 and 8 four times with no repeats
+//this program asks for a number a teams participating in a tournament and matches up the first round with no repeats
 public class GabrielleDobkinRandomHatV2 {
+    private static int unusedIndex =0; //a method can't return two numbers so this is updated universally
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("What number of teams?");
-        int teamNum = input.nextInt();
-        int[] teams = new int[teamNum];
-        for (int i = 1; i<=teamNum; i++){ //populates an array with all of the teams
-            teams[i-1] = i;
+        run(); //run can be called many times for different situations
+    }
+    public static void run(){ //method with scanner and print statement
+        Scanner scan = new Scanner(System.in);
+        System.out.print("How many teams are competing? ");
+        int numTeams = scan.nextInt(); //gets number of teams competing
+        if(numTeams%2==0 && numTeams>0){//checks if the input is valid
+            int[] teams = new int[numTeams]; //populates an array with all of the teams
+            for (int i = 1; i<=numTeams; i++){
+                teams[i-1] = i;
+            }
+            int[] used = new int[numTeams]; //creates a blank array that will be used to store teams already picked
+            unusedIndex = 0;
+            while(used[numTeams-1]==0) { //find matches and prints matches. repeats based on number of teams
+                int team1= pick(numTeams, used, teams);
+                int team2 = pick(numTeams, used, teams);
+
+                System.out.println("Team "+team1 + " versus team "+ team2);
+            }
+        } else{
+            System.out.println("Invalid input must be an even number greater than zero.");
+            run();
         }
-        int[] used = new int[teamNum]; // creates a blank array that will later hold used teams, it's blank now because no team has been used yet
-        int unusedIndex = 0; //keeps track of the lowest empty index in the unused array
-        while(used[teamNum-1]==0) { //repeat while the last number of the unused array is empty (not all the teams have been picked)
-            boolean done = false; //checks if a good number is found
-            int team1= 0; // each iteration a different team 1 and 2 will be chosen
-            int team2 = 0;
-
-            while(!done) { //generates a random number and checks to see if it is in any of the unused array's indexes
-                team1 = (int) (Math.random() * teamNum + 1);
-                int check = 0;
-                for(int i = 0; i<teamNum;i++) {
-                    if (!(team1 == used[i])) {
-                        check++;
-                    }
-                }
-                if(check==teamNum){
-                    done = true;
+    }
+    public static int pick(int numTeams, int[] used, int[] teams){//finds and returns matches
+        boolean done = false; //checks if an unused team has been found
+        int team = 0; //the team number that will be returned
+        while(!done) { //while loop is used because number of repeats is unknown
+            team = (int) (Math.random() * numTeams + 1);//picks random team
+            int check = 0; //checks if that team has been used
+            for(int i = 0; i<numTeams;i++) {
+                if (!(team == used[i])) {
+                    check++;
                 }
             }
-
-            for (int i = 0; i < teamNum; i++) { //updates unused array
-                if (teams[i] == team1) {
-                    used[unusedIndex] = team1;
-                    unusedIndex++;
-                }
+            if(check==numTeams){//it it's unused it's all good, otherwise repeat
+                done = true;
             }
-
-            done = false; //resets done and finds team 2
-            while(!done) {
-                team2 = (int) (Math.random() * teamNum + 1);
-                int check = 0;
-                for(int i = 0; i<teamNum;i++) {
-                    if (!(team2 == used[i])) {
-                        check++;
-                    }
-                }
-                if(check==teamNum){
-                    done = true;
-                }
-            }
-
-            for (int i = 0; i < teamNum; i++) {
-                if (teams[i] == team2) {
-                    used[unusedIndex] = team2;
-                    unusedIndex++;
-                }
-            }
-            System.out.println(team1 + " "+ team2); //prints teams
         }
+        for (int i = 0; i < numTeams; i++) {//once a team has been found it is marked that it shouldn't be reused
+            if (teams[i] == team) {
+                used[unusedIndex] = team;
+                unusedIndex++;
+            }
+        }
+        return team;
     }
 }
