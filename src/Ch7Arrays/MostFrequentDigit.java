@@ -1,9 +1,11 @@
+package Ch7Arrays;
+
 import java.util.Arrays;
 
 public class MostFrequentDigit {
     public static void main(String[] args) {
-        int num = 6666333;
-        System.out.println(gaby(num));
+        int num = 12334566;
+        System.out.println(liamPrice(num));
     }
     public static int liamPrice(int n){
         n=Math.abs(n);
@@ -24,6 +26,7 @@ public class MostFrequentDigit {
         return mostFrequent;
     }
     public static int gaby(int n){
+        n=Math.abs(n);
         String num = n+"";
         int[] nums = new int[num.length()];
         for(int i = 0; i<nums.length;i++){
@@ -48,7 +51,6 @@ public class MostFrequentDigit {
             }
         }
         if(tempFreq>frequency){
-            frequency=tempFreq;
             mostFrequent=tempNum;
         }
         return mostFrequent;
