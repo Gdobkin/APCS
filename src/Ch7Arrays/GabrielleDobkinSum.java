@@ -1,18 +1,23 @@
 package Ch7Arrays;//this program adds numbers with the use of arrays
 import java.io.File;
-
 import java.util.Scanner;
 public class GabrielleDobkinSum {
     private static int COL = 25;
     public static void main(String[] args) {
-        Scanner input = null;
-        try {
-            input = new Scanner(new File(GabrielleDobkinSum.class.getResource("sum.txt").toURI()));
+        try { //the try catch is there to prevent the program from crashing
+            Scanner input = new Scanner(new File(GabrielleDobkinSum.class.getResource("sum3.txt").toURI()));
+            //helps read file from the directory where the class is (so the project can work at school) I looked it up online
+            run(input);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        run(input);
+
     }
+
+    /**
+     * This method runs the program and calls all of the methods
+     * @param input - this is the file
+     */
     public static void run(Scanner input) {
         int lineCount=0;
         while (input.hasNextLine()) {
@@ -28,7 +33,6 @@ public class GabrielleDobkinSum {
         }
         System.out.println("\nTotal lines = "+lineCount);
     }
-
     /**
      * This method adds all the numbers and stores the sums
      * @param addition - the 2D array with the numbers to be added
@@ -47,7 +51,6 @@ public class GabrielleDobkinSum {
             carry = total/10;
         }
     }
-
     /**
      * This method populates a 2D array with int arrays that will be added
      * @param numbers - input is taken from here
@@ -62,22 +65,21 @@ public class GabrielleDobkinSum {
             }
         }
     }
-
     /**
      * Prints the answer of addition
      * @param result - the array that holds the sum of each place value
      */
     public static void printResult(int[] result) {
         String resulting = "";
-        int count = 0;
-        for(int i = 0; i<result.length; i++){
-            if(result[i]==0){
+        int count = 0;//index of the first non zero integer
+        for(int i = 0; i<result.length; i++){ //this is so there is no leading zeros
+            if(result[i]==0){//finds the first index that isn't a zero
                 count++;
-            } else{
+            } else{//when the index is not a zero, stop the loop and start the next one at that index
                 break;
             }
         }
-        if(count == result.length){
+        if(count == result.length){//if all the numbers are zero, the sum is zero
             resulting="0";
         } else {
             for (int i = count; i < result.length; i++) {
@@ -86,7 +88,6 @@ public class GabrielleDobkinSum {
         }
         System.out.println(" = "+resulting);
     }
-
     /**
      * Prints the numbers to be added
      * @param numbers - String array with all the numbers from the line
