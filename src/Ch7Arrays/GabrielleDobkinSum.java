@@ -5,8 +5,9 @@ import java.util.Arrays;
 import java.util.Scanner;
 public class GabrielleDobkinSum {
     public static int COL = 25;
-    public static void main(String[] args) throws FileNotFoundException {
-        Scanner input = new Scanner(new File("/Users/Gaby/IdeaProjects/APCS/src/sum.txt"));
+    public static void main(String[] args) throws Exception {
+
+        Scanner input = new Scanner(new File(GabrielleDobkinSum.class.getResource("sum.txt").toURI()));
         int lineCount=0;
         while (input.hasNextLine()) {
             lineCount++;
