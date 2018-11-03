@@ -1,4 +1,4 @@
-//This is version 2 of the weather analysis project
+package Ch7Arrays;//This is version 2 of the weather analysis project
 // this version prints the weather array and states the hightest and lowest temperatures
 import java.text.DecimalFormat;
 import java.util.Arrays;

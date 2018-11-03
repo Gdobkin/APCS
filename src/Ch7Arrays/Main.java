@@ -1,3 +1,5 @@
+package Ch7Arrays;
+
 import java.text.DecimalFormat;
 import java.util.Scanner;
 

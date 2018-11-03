@@ -1,4 +1,4 @@
-//this program adds numbers with the use of arrays
+package Ch7Arrays;//this program adds numbers with the use of arrays
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
