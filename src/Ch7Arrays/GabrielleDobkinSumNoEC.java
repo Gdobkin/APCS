@@ -1,11 +1,11 @@
 package Ch7Arrays;//this program adds numbers with the use of arrays
 import java.io.File;
 import java.util.Scanner;
-
-public class GabrielleDobkinSum {
+public class GabrielleDobkinSumNoEC {
+    private static int COL = 25;
     public static void main(String[] args) {
         try { //the try catch is there to prevent the program from crashing
-            Scanner input = new Scanner(new File(GabrielleDobkinSum.class.getResource("sum.txt").toURI()));
+            Scanner input = new Scanner(new File(GabrielleDobkinSumNoEC.class.getResource("sum3.txt").toURI()));
             //helps read file from the directory where the class is (so the project can work at school) I looked it up online
             run(input);
         } catch (Exception e) {
@@ -25,15 +25,9 @@ public class GabrielleDobkinSum {
             String lineScan = input.nextLine();
             String[] numbers = lineScan.split("\\s+");//backslash s is the regular expression that is used to find space and with a plus sign it finds any space
             printNums(numbers);
-            int longest = 0;
-            for(int i = 0; i<numbers.length;i++){
-                if(numbers[i].length()>longest){
-                    longest=numbers[i].length();
-                }
-            }
-            int[][] addition = new int[numbers.length][longest];
+            int[][] addition = new int[numbers.length][COL];
             createArrays(numbers, addition);
-            int [] result = new int[longest]; //TODO: what if sum has more spaces that col
+            int [] result = new int[COL]; //TODO: what if sum has more spaces that col
             adds(addition, result);
             printResult(result);
         }

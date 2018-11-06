@@ -10,7 +10,7 @@ public class GabrielleDobkinSumTest extends TestCase {
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,4,5,6}
         };
         int [][] result  = new int[input.length][25];
-        GabrielleDobkinSum.createArrays(input,result);
+        GabrielleDobkinSumNoEC.createArrays(input,result);
 
         for( int i=0;i<result.length;i++){
             assertEquals(25,result[i].length);
