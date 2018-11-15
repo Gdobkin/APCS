@@ -2,7 +2,7 @@ package Ch7Arrays;//this program adds numbers with the use of arrays
 import java.io.File;
 import java.util.Scanner;
 
-public class GabrielleDobkinSum {
+public class GabrielleDobkinSum {//with the extra credit
     public static void main(String[] args) {
         try { //the try catch is there to prevent the program from crashing
             Scanner input = new Scanner(new File(GabrielleDobkinSum.class.getResource("sum.txt").toURI()));
@@ -11,9 +11,7 @@ public class GabrielleDobkinSum {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
     /**
      * This method runs the program and calls all of the methods
      * @param input - this is the file
