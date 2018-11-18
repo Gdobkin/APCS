@@ -6,7 +6,7 @@ import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Scanner;
 //This program reads input from a file and calculates your personality type based on survey results
-public class GabrielleDobkinPersonalityV2 {
+public class GabrielleDobkinPersonality {
     public static void main(String[] args){
         Scanner userInput = new Scanner(System.in);
         System.out.print("Input file name: ");
