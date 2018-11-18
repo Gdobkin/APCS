@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 //This program reads input from a file and calculates your personality type based on survey results
 public class GabrielleDobkinPersonality {
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner userInput = new Scanner(System.in);
         System.out.print("Input file name: ");
         PrintStream output = null;
@@ -23,19 +23,16 @@ public class GabrielleDobkinPersonality {
      * This method runs the program. It can be called in the main method multiple times
      * @param userInput - the scanner containing user input
      * @param output - the printstream file
-     * @throws FileNotFoundException - the exception associated with a File object
      */
-    public static void run(Scanner userInput, PrintStream output) {
+    public static void run(Scanner userInput, PrintStream output) throws FileNotFoundException {
         String fileName = userInput.next();
-        Scanner input = null;
-        try { // this is to restart the program every time a wrong file is inputted
-            File file = new File(fileName);
-            input = new Scanner(file);//TODO make work for school: move file out of src
-        } catch (FileNotFoundException e) {
+        File file = new File(fileName);
+        while(!file.exists()){
             System.out.print("File not found. Try again: ");
             run(userInput, output);
             return;
         }
+        Scanner input = new Scanner(file);//TODO make work for school: move file out of src
         int countInputLine = 0;
         while(input.hasNextLine()){
             countInputLine++;
@@ -159,30 +156,25 @@ public class GabrielleDobkinPersonality {
      * @param answerLetter - the answer that is being counted
      */
     public static void fillAnswer(int[] answers, int quesNum, char answerLetter) {
-        if (quesNum == 1) {
-            if (answerLetter == 'b') {
-                answers[0]++;
-            } else if (answerLetter == 'a') {
-                answers[1]++;
-            }
-        } else if (quesNum == 2 || quesNum == 3) {
-            if (answerLetter == 'b') {
-                answers[2]++;
-            } else if (answerLetter == 'a') {
-                answers[3]++;
-            }
-        } else if (quesNum == 4 || quesNum == 5) {
-            if (answerLetter == 'b') {
-                answers[4]++;
-            } else if (answerLetter == 'a') {
-                answers[5]++;
-            }
-        } else if (quesNum == 6 || quesNum == 7) {
-            if (answerLetter == 'b') {
-                answers[6]++;
-            } else if (answerLetter == 'a') {
-                answers[7]++;
-            }
+        if (answerLetter != 'a' && answerLetter != 'b') {
+            return;
+        }
+        switch(quesNum){
+            case 1:
+                answers['b'-answerLetter]++; //if it is b then b-b=0, it it is a then b-a=1
+                break;
+            case 2:
+            case 3:
+                answers['b'-answerLetter+2]++;//same logic with offset
+                break;
+            case 4:
+            case 5:
+                answers['b'-answerLetter+4]++;
+                break;
+            case 6:
+            case 7:
+                answers['b'-answerLetter+6]++;
+                break;
         }
     }
 }
