@@ -38,10 +38,6 @@ public class PointV2 {
         setX(newX);
         setY(newY);
     }
-    //toString method
-    public String toString(){
-        return "("+this.x+", "+this.y+")";
-    }
     //distance and distanceFrom
     public double distance(PointV2 other){
         return(Math.sqrt(Math.pow(this.x-other.x,2)+(Math.pow(this.y-other.y,2))));

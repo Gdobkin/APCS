@@ -1,12 +1,9 @@
 package Ch8Objects;
 
-public class PointClient {
+public class PointClientV1 {
     public static void main(String[] args) {
-        PointV2 p1 = new PointV2();
+        PointV3 p1 = new PointV3(5,5);
         System.out.println("P1: ("+p1.x+", "+p1.y+")");
-        PointV1 p2 = new PointV1(5,5);
-        //p2.x=7;
-        //p2.y=8;
         p1.translate(5,4);
         System.out.println("P1': ("+p1.x+", "+p1.y+")");
 
@@ -20,7 +17,6 @@ public class PointClient {
         System.out.println("P1'''': ("+p1.x+", "+p1.y+")");
 
         System.out.println("p1 = " + p1);
-
     }
 }
 /* instantiate */
