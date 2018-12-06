@@ -1,19 +1,27 @@
 package Ch8Objects;
 
-public class PointV3 {
+public class PointV4 {
     //state
-    public int x;
-    public int y;
+     private int x;
+     private int y;
+
+    public static int getObjCount() {
+        return objCount;
+    }
+
+    private static int objCount;
 
     //overloaded constructors
-    public PointV3(int initialX, int initialY){
-        x=initialX;
-        y=initialY;
+    public PointV4(int x, int y){
+        this.x=x;
+        this.y=y;
+        objCount++;//static fields are local to the class they do not belong to the object
     }
     //default constructor
-    public PointV3(){
+    public PointV4(){
         x=0;
         y=0;
+        objCount++;
     }
 
     public int getX() {
@@ -41,9 +49,9 @@ public class PointV3 {
         setX(getX()+dx);
         setY(getY()+dy);
     }
-    public void setLocationV1(int newX, int newY){
-        x = newX;
-        y = newY;
+    public void setLocationV1(int x, int y){
+        this.x = x;
+        this.y = y;
     }
     public void setLocation(int newX, int newY){
         setX(newX);
@@ -53,11 +61,13 @@ public class PointV3 {
     public String toString(){
         return "("+this.x+", "+this.y+")";
     }
+
     //distance and distanceFrom
-    public double distance(PointV3 other){
+    public double distance(PointV4 other){
         return(Math.sqrt(Math.pow(this.x-other.x,2)+(Math.pow(this.y-other.y,2))));
     }
-    public static double distanceFromTwo(PointV3 first, PointV3 second){
+
+    public static double distanceFromTwo(PointV4 first, PointV4 second){
         return(Math.sqrt(Math.pow(first.x-second.x,2)+(Math.pow(first.y-second.y,2))));
     }
 
