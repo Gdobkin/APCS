@@ -2,7 +2,7 @@ package Ch7Arrays;
 
 import java.util.Arrays;
 
-public class MostFrequentDigit {
+public class GabrielleDobkinMode {
     public static void main(String[] args) {
         int num = 12334566;
         System.out.println(liamPrice(num));
