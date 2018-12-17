@@ -1,6 +1,6 @@
 package Ch8Objects.BankAccountProgram;
 
-import Ch8Objects.HW1102.BankAccount;
+import Ch8Objects.HW1211.BankAccount;
 
 public class BankAccountClient {
     public static void main(String[] args) {

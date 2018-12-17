@@ -1,4 +1,4 @@
-package Ch8Objects.HW1102;
+package Ch8Objects.HW1211;
 
 public class BankAccount {
     //state fields
@@ -53,7 +53,7 @@ public class BankAccount {
 
     //override toString
     public String toString() {
-        return "Name: "+name+"\nBalance: "+balance;
+        return "Name: "+name+" Balance: "+balance;
     }
 }
 
