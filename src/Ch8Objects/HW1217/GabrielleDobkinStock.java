@@ -5,17 +5,6 @@ public class GabrielleDobkinStock {
     private double totalCost;
     private int shares;
 
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public double getTotalCost() {
-        return totalCost;
-    }
-
-    public int getShares() {
-        return shares;
-    }
     public void buy(int shares, double value){
         this.shares+=shares;
         totalCost+=value*shares;
