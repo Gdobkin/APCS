@@ -10,5 +10,9 @@ public class HW1211Clinet {
         BankAccount highSchoolChecking = new BankAccount("Gaby",1234567779,
                 "1 Thompson Place",070502,1111,3000);
         System.out.println(highSchoolChecking);
+        CellPhone iPhone6 = new CellPhone(15,"(914)-800-7879","red",67,"Gaby");
+        System.out.println(iPhone6);
+        Outfit cute = new Outfit("red","red",9,"keens",3,33);
+        System.out.println(cute);
     }
 }
