@@ -1,15 +1,14 @@
 package Ch8Objects.BankAccountProgram;
 
-import Ch8Objects.HW1211.BankAccount;
-
 public class BankAccountClient {
     public static void main(String[] args) {
-        BankAccount andrew = new BankAccount("Andrew", 123456789, "123 sesame street", 20802);
+        Address home = new Address(123,"sesame street","Larchmont","NY", 10538);
+        Dob birthday = new Dob(2,8,02);
+        BankAccount andrew = new BankAccount("Andrew", 123456789, home, birthday);
         andrew.deposit(10000);
         System.out.println(andrew);
         andrew.withdraw(500);
-
-        BankAccount gaby = new BankAccount("Gaby",914245678,"1 Thompson Place",53102,1313,1000000000);
+        BankAccount gaby = new BankAccount("Gaby",914245678, home, birthday,1313,1000000000);
     }
 
 

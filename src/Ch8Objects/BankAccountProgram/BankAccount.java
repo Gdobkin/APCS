@@ -1,4 +1,4 @@
-package Ch8Objects.HW1211;
+package Ch8Objects.BankAccountProgram;
 
 public class BankAccount {
     //state fields
@@ -7,17 +7,17 @@ public class BankAccount {
     private int acctNum;
     private int ssn;
     private int pin;
-    private String address;
-    private int dob;
+    private Address address;
+    private Dob dob;
 
     //overloaded constructors
-    public BankAccount(String name, int ssn, String address, int dob){
+    public BankAccount(String name, int ssn, Address address, Dob dob){
         this.name=name;
         this.ssn=ssn;
         this.address=address;
         this.dob=dob;
     }
-    public BankAccount(String name, int ssn, String address, int dob, int pin, int balance){
+    public BankAccount(String name, int ssn, Address address, Dob dob, int pin, int balance){
         this.name=name;
         this.ssn=ssn;
         this.address=address;
@@ -35,11 +35,11 @@ public class BankAccount {
         return acctNum;
     }
 
-    public String getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public int getDob(){
+    public Dob getDob(){
         return dob;
     }
 
