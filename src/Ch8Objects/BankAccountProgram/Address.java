@@ -16,6 +16,15 @@ public class Address {
         this.zip = zip;
     }
 
+    public Address(int houseNum, String streetName, String town, String state, int zip, String apt) {
+        this.houseNum = houseNum;
+        this.streetName = streetName;
+        this.town = town;
+        this.state = state;
+        this.zip = zip;
+        this.apt = apt;
+    }
+
     public int getHouseNum() {
         return houseNum;
     }

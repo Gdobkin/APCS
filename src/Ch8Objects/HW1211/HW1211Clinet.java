@@ -1,7 +1,5 @@
 package Ch8Objects.HW1211;
 
-import Ch8Objects.BankAccountProgram.BankAccount;
-
 public class HW1211Clinet {
     public static void main(String[] args) {
         Student gaby= new Student("gaby",11,4.0,053102,

@@ -8,16 +8,16 @@ public class BankAccount {
     private int ssn;
     private int pin;
     private Address address;
-    private Dob dob;
+    private DateOfBirth dob;
 
     //overloaded constructors
-    public BankAccount(String name, int ssn, Address address, Dob dob){
+    public BankAccount(String name, int ssn, Address address, DateOfBirth dob){
         this.name=name;
         this.ssn=ssn;
         this.address=address;
         this.dob=dob;
     }
-    public BankAccount(String name, int ssn, Address address, Dob dob, int pin, int balance){
+    public BankAccount(String name, int ssn, Address address, DateOfBirth dob, int pin, int balance){
         this.name=name;
         this.ssn=ssn;
         this.address=address;
@@ -39,7 +39,7 @@ public class BankAccount {
         return address;
     }
 
-    public Dob getDob(){
+    public DateOfBirth getDob(){
         return dob;
     }
 
