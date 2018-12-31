@@ -55,6 +55,7 @@ public class GabrielleDobkinDVDCollection {
      */
     public String toString(){//\n characters are used for formatting purposes
         String toReturn = "";
+        toReturn+="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
         toReturn+="My DVD Collection\n\n";
         DecimalFormat price = new DecimalFormat("#.00");//makes sure that the total and average cost both go to the hundredths place
         toReturn+="Number of DVDs: "+count+"\n";
