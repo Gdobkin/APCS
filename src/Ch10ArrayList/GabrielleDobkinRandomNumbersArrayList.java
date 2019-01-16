@@ -12,7 +12,7 @@ public class GabrielleDobkinRandomNumbersArrayList{
         int sum=0;
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
-        while(scan.hasNextInt()){
+        while(scan.hasNextInt()){//loop handles all the needed find values except the odd removal
             int next = scan.nextInt();
             ints.add(next);
             sum+=next;
