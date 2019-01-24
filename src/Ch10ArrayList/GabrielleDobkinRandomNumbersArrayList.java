@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class GabrielleDobkinRandomNumbersArrayList{
     public static void main(String[] args) throws FileNotFoundException{
-        Scanner scan = new Scanner(new File("/Users/Gaby/IdeaProjects/APCS/randomNumbers.txt"));
+        Scanner scan = new Scanner(new File("G:\\My Drive\\APCS\\randomNumbers.txt"));
         ArrayList<Integer> ints = new ArrayList<>();
         int sum=0;
         int min = Integer.MAX_VALUE;
@@ -31,6 +31,9 @@ public class GabrielleDobkinRandomNumbersArrayList{
             while(ints.get(i)%2==0){
                 ints.remove(i);
             }
+        }
+        if(ints.get(ints.size()-1)%2==0){
+            ints.remove(ints.size()-1);
         }
         System.out.println(ints);
     }
