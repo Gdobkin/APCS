@@ -12,10 +12,30 @@ public class ArrayListExercise {
         while(scan.hasNext()){
             words.add(scan.next());
         }
-        addStars(words);
-        System.out.println(words);
-        removeStars(words);
-        System.out.println(words);
+        ArrayList<Integer> one =new  ArrayList<Integer>();
+        one.add(1);
+        one.add(4);
+        one.add(8);
+        one.add(9);
+        one.add(11);
+        one.add(15);
+        one.add(17);
+        one.add(28);
+        one.add(59);
+
+        ArrayList<Integer> two =new  ArrayList<Integer>();
+        two.add(4);
+        two.add(7);
+        two.add(11);
+        two.add(17);
+        two.add(19);
+        two.add(20);
+        two.add(23);
+        two.add(28);
+        two.add(37);
+        two.add(59);
+        two.add(81);
+        System.out.println(intersect(one,two));
     }
     private static void printReg(ArrayList words){
         System.out.println(words);
@@ -63,5 +83,18 @@ public class ArrayListExercise {
             words.remove(i);
         }
     }
+    public static ArrayList<Integer> intersect(ArrayList<Integer> one, ArrayList<Integer> two){
+        ArrayList<Integer> end = new ArrayList<>();
+        for(int k = 0; k<one.size(); k++) {
+            for (int j = 0; j < two.size(); j++) {
+                if (one.get(k) == two.get(j)) {
+                    end.add(two.get(j));
+                    two.remove(two.get(j));
+                }
+            }
+        }
+        return end;
+    }
+    //can use .contains as well
 }
 
