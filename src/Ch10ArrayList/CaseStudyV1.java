@@ -18,10 +18,13 @@ public class CaseStudyV1 {//the wheels on the bus go round and round, round and 
         System.out.println(words1);
         System.out.println(words2);
         System.out.println(overlap);
+        System.out.println("Percent Overlap 1:" + percentOverlap(words1,overlap));
+        System.out.println("Percent Overlap 2:" + percentOverlap(words2,overlap));
 
   }
 
     public static ArrayList<String> wordList(Scanner input){
+        input.useDelimiter("[^a-zA-Z']+");
         //temp array
         ArrayList<String> words = new ArrayList<>();
         //populate
@@ -66,6 +69,7 @@ public class CaseStudyV1 {//the wheels on the bus go round and round, round and 
         //return unique into other arrayList
         return unique;
     }
+
     public static ArrayList<String> overlap(ArrayList<String> a, ArrayList<String> b){
         int i1 = 0;
         int i2 = 0;
@@ -83,5 +87,15 @@ public class CaseStudyV1 {//the wheels on the bus go round and round, round and 
             }
         }
         return common;
+    }
+
+    public static double percentOverlap(ArrayList<String> words, ArrayList<String> overlap){
+        double cumulative = 0;
+        for(int i = 0; i<overlap.size(); i++){
+            if(words.contains(overlap.get(i))){
+                cumulative++;
+            }
+        }
+        return cumulative/words.size()*100;
     }
 }
