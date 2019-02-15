@@ -1,6 +1,10 @@
 package Ch9Inheritance;
 
 public class Employee {
+    String name;
+    public Employee(String name){
+        this.name = name;
+    }
     public int getHours(){
         return 40;
     }
