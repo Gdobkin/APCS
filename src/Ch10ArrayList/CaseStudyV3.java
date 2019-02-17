@@ -2,12 +2,12 @@ package Ch10ArrayList;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;//the wheels on the bus go round and round, round and round, round and round
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
 
-public class CaseStudyV1 {//punctuation gotten rid of
+public class CaseStudyV3 {//stemming algorithm
 
     public static void main(String[] args) throws FileNotFoundException {
         System.out.println("This program compares two text files\nand reports the number of words in\ncommon and the percent overlap.\n");

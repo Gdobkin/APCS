@@ -1,23 +1,22 @@
 package Ch8Objects.WinterBreak.GroceryList;
 
-public class GabrielleDobkinGroceryList{
-    private GabrielleDobkinGroceryItemOrder[] list;
-    private int numItems;
+import java.util.ArrayList;
 
-    public GabrielleDobkinGroceryList(GabrielleDobkinGroceryItemOrder[] list, int numItems) {
+public class GabrielleDobkinGroceryList{
+    private ArrayList<GabrielleDobkinGroceryItemOrder> list;
+
+    public GabrielleDobkinGroceryList(ArrayList<GabrielleDobkinGroceryItemOrder> list) {
         this.list = list;
-        this.numItems = numItems;
     }
 
     public void addItem(GabrielleDobkinGroceryItemOrder newItem){
-        list[numItems]=newItem;
-        numItems++;
+        list.add(newItem);
     }
 
     public double getTotalCost(){
         double totalCost = 0;
-        for(int i = 0; i<numItems; i++){
-            totalCost+=list[i].getCost();
+        for(int i = 0; i<list.size(); i++){
+            totalCost+=list.get(i).getCost();
         }
         return totalCost;
     }
@@ -25,8 +24,8 @@ public class GabrielleDobkinGroceryList{
     public String toString(){
         String groceryList="";
         groceryList+="List Items: \n";
-        for(int i = 0; i<numItems; i++){
-            groceryList+="-\t"+list[i]+"\n";
+        for(int i = 0; i<list.size(); i++){
+            groceryList+="-\t"+list.get(i)+"\n";
         }
         groceryList+="\nTotal cost: "+this.getTotalCost();
         return groceryList;
