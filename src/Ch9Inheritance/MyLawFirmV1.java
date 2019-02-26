@@ -3,9 +3,10 @@ package Ch9Inheritance;
 
 public class MyLawFirmV1 {
     public static void main(String[] args) {
-        Employee gaby = new Lawyer("ki");
-        Employee andrew = new Secretary("k");
-        Employee charlie = new Marketer("k");
+        /*Employee gaby = new Lawyer();
+        Employee andrew = new Secretary();
+        Employee charlie = new Marketer();
+>>>>>>> Stashed changes
 
         printInfo(gaby);
         printInfo(andrew);
@@ -14,6 +15,6 @@ public class MyLawFirmV1 {
     public static void printInfo(Employee staff){
         System.out.println("salary: "+staff.getSalary());
         System.out.println("vacation: "+staff.getVacationDays());
-    }
+  */  }
 
 }
