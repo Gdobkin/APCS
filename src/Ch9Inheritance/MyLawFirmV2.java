@@ -3,7 +3,7 @@ package Ch9Inheritance;
 
 public class MyLawFirmV2 {
     public static void main(String[] args) {
-        Employee[] myEmployees = {new Lawyer(), new Secretary(),new Marketer()};
+        Employee[] myEmployees = {new Lawyer("ki"), new Secretary("k"),new Marketer("k")};
         printInfo(myEmployees);
     }
     public static void printInfo(Employee[] staff) {

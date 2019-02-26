@@ -3,11 +3,11 @@ package Ch8Objects.WinterBreak.DVDCollection;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class GabrielleDobkinDVDCollection {
+public class GabrielleDobkinDVDCollectionMod {
     /**
      * The state fields for this object include the Array that will hold DVDS, the count number of total DVDs, and the totalCost of all DVDs
      */
-    private ArrayList<GabrielleDobkinDVD> collection;
+    private ArrayList<GabrielleDobkinDVDMod> collection;
    // private int count;
     private double totalCost;
 
@@ -16,7 +16,7 @@ public class GabrielleDobkinDVDCollection {
      * It contains a recursive loop which calls the increaseSize method if the array is too small to hold another DVD and them restarts the method
      * @param newDVD - this is the new DVD object that is being added to the list
      */
-    public void addDVD(GabrielleDobkinDVD newDVD){
+    public void addDVD(GabrielleDobkinDVDMod newDVD){
         collection.add(newDVD);
         totalCost+=newDVD.getCost();
     }
@@ -26,7 +26,7 @@ public class GabrielleDobkinDVDCollection {
      * @param collection - the array of DVD objects
      * @param totalCost - the total cost of dvds in the array
      */
-    public GabrielleDobkinDVDCollection(ArrayList<GabrielleDobkinDVD> collection, double totalCost) {
+    public GabrielleDobkinDVDCollectionMod(ArrayList<GabrielleDobkinDVDMod> collection, double totalCost) {
         this.collection = collection;
         this.totalCost = totalCost;
     }

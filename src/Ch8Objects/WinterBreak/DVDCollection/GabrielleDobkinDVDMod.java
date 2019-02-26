@@ -2,7 +2,7 @@ package Ch8Objects.WinterBreak.DVDCollection;
 
 import java.text.DecimalFormat;
 
-public class GabrielleDobkinDVD {
+public class GabrielleDobkinDVDMod {
     /**
      * These are the state fields and they represent attributes of DVDs
      */
@@ -20,7 +20,7 @@ public class GabrielleDobkinDVD {
      * @param cost - cost to buy the DVD
      * @param blueray - whether or not it is a blueray DVD
      */
-    public GabrielleDobkinDVD(String title, String director, int year, double cost, boolean blueray) {
+    public GabrielleDobkinDVDMod(String title, String director, int year, double cost, boolean blueray) {
         this.title = title;
         this.director = director;
         this.year = year;
