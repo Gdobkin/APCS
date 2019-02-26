@@ -2,9 +2,16 @@ package Ch9Inheritance;
 
 public class Employee {
     String name;
-    public Employee(String name){
+    private int years;
+    public Employee(String name, int years){
         this.name = name;
+        this.years = years;
     }
+
+    public int getYears() {
+        return years;
+    }
+
     public int getHours(){
         return 40;
     }

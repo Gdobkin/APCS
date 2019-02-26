@@ -1,8 +1,8 @@
 package Ch9Inheritance;
 
 public class Lawyer extends Employee {
-    public Lawyer(String name){
-        super(name);
+    public Lawyer(String name,int year){
+        super(name,year);
     }
     public int getVacationDays(){
         return 15;
