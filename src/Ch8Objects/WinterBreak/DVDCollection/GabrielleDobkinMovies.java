@@ -1,7 +1,6 @@
 package Ch8Objects.WinterBreak.DVDCollection;
 
-import Ch8Objects.WinterBreak.DVDCollection.Ch8Objects.WinterBreak.DVDCollection.GabrielleDobkinDVD;
-import Ch8Objects.WinterBreak.DVDCollection.Ch8Objects.WinterBreak.DVDCollection.GabrielleDobkinDVDCollection;
+
 
 import java.util.ArrayList;
 
