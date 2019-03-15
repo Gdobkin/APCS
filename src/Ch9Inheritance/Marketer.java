@@ -1,6 +1,9 @@
 package Ch9Inheritance;
 
 public class Marketer extends Employee {
+    public Marketer(String name){
+        super(name);
+    }
     public Marketer(String name,int year){
         super(name,year);
     }

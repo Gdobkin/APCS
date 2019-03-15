@@ -1,11 +1,18 @@
 package Ch9Inheritance;
 
 public class Employee {
-    String name;
+    public String getName() {
+        return name;
+    }
+
+    private String name;
     private int years;
     public Employee(String name, int years){
         this.name = name;
         this.years = years;
+    }
+    public Employee(String name){
+        this.name = name;
     }
 
     public int getYears() {

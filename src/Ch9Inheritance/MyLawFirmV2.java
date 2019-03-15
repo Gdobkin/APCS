@@ -9,7 +9,7 @@ public class MyLawFirmV2 {
     }
     public static void printInfo(Employee[] staff) {
         for (Employee a: staff) {
-            System.out.println("name: " + a.name);
+            System.out.println("name: " + a.getName());
             System.out.println("salary: " + a.getSalary());
             System.out.println("vacation: " + a.getVacationDays());
             System.out.println("form: " + a.getVacationForm());
