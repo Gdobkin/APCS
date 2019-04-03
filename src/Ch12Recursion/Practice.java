@@ -24,9 +24,4 @@ public class Practice {
         }
     }
 
-    public static int h(int x){
-        if(x<10){
-            return x-4;
-        }
-    }
 }
