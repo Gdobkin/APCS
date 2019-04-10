@@ -23,19 +23,18 @@ public class BinarySort  {
         }
         return -1;
     }
-    public static int recursiveBinarySearch(int[] x, int target, int min, int max){
-        int mid = (max+min)/2;
-        if(max<min){
+    public static int recursiveBinarySearch(int[] x, int target, int min, int max) {
+        if (max < min) {
             return -1;
+        } else {
+            int mid = (max + min) / 2;
+            if (target < x[mid]) {
+                return recursiveBinarySearch(x, target, min, mid - 1);
+            } else if (target > x[mid]) {
+                return recursiveBinarySearch(x, target, mid + 1, max);
+            } else {
+                return mid;
+            }
         }
-        if(target<x[mid]){
-            return recursiveBinarySearch(x, target, min, max - 1);
-        } else if (target>x[mid]){
-            return recursiveBinarySearch(x,target,mid+1, max);
-        } else if(target==x[mid]){
-            return mid;
-        }
-        return -1;
     }
-
 }
